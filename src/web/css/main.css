@@ -332,8 +332,39 @@ Navbar
     padding: 0.15rem 1rem;
 }
 
+.jewelry-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Изменено */
+    justify-content: space-between;
+    padding-bottom: 3rem;
+}
 
-@media  screen and (min-width: 992px){
+.jewelry-item {
+    margin: 1rem;
+}
+
+.item-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-img {
+    margin: 0;
+}
+
+@media screen and (min-width: 1200px) {
+    .jewelry-tags{
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+
+    .tags-container h5{
+        font-size: 1.15rem;
+    }
+
+}
+
+@media screen and (min-width: 992px){
     .nav-btn{
         display: none;
     }
@@ -364,7 +395,7 @@ Navbar
         display: flex;
         column-gap: 10px;
         justify-content: flex-start;
-        
+
     }
 
     .menu-item {
@@ -402,11 +433,11 @@ Navbar
     }
 
 
-    /*
-===============
-Footer
-===============
-*/
+        /*
+    ===============
+    Footer
+    ===============
+    */
     .page-footer{
         height: 4rem;
         text-align: center;
@@ -426,33 +457,116 @@ Footer
 Home Page Hero
 ===============
 */
-.hero{
-    height: 40vh;
-    position: relative;
-    margin-bottom: 2rem;
-    background: url('/src/web/img/maincover.jpeg')  center/cover no-repeat;
-    border-radius:  var(--borderRadius);
+    .hero{
+        height: 40vh;
+        position: relative;
+        margin-bottom: 2rem;
+        background: url('/src/web/img/maincover.jpeg')  center/cover no-repeat;
+        border-radius:  var(--borderRadius);
 
-}
+    }
 
-.hero-container{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.4) ;
-    border-radius: var(--borderRadius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .hero-container{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,0.4) ;
+        border-radius: var(--borderRadius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-}
+    }
 
-.hero-text{
-    text-align: center;
-    color: white;
+    .hero-text{
+        text-align: center;
+        color: white;
 
+    }
+
+
+
+    /*
+   ===============
+   Jewelry
+   ===============
+
+     */
+
+    .tags-container{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 3rem;
+    }
+
+    .jewelry-tags{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0.5rem 0.5rem;
+        padding-bottom: 3rem;
+        font-size: 1.2rem;
+    }
+
+    .jewelry-tags a{
+        text-transform: capitalize;
+        display: block;
+        color: #222222;
+        transition: var(--transition);
+    }
+
+    .jewelry-tags  a:hover{
+        color: #64748b;
+    }
+
+
+    .jewelry-item{
+        max-width: 200px;
+        display: block;
+    }
+
+    .item-img{
+       height: 15rem;
+        border-radius:  var(--borderRadius);
+        margin-bottom: 1rem;
+    }
+
+    .jewelry-item h5{
+        margin-bottom: 0;
+        line-height: 1;
+        color: #222222;
+    }
+
+    .jewelry-item p{
+        margin-bottom: 0;
+        line-height: 1;
+        margin-top: 0.5rem;
+        color: #222222;
+        letter-spacing: var(--letterSpacing);
+    }
+
+    .tags-container{
+        order: 0;
+    }
+
+    .jewelry-tags{
+        grid-template-columns:1fr;
+    }
+
+    .tags-container p{
+        font-size: 0.85rem;
+    }
+
+
+    .error-page{
+        text-align: center;
+        padding-top: 5rem;
+    }
+
+    .error-page h1{
+    font-size: 9rem;
+    }
 }
 
 @media screen and (min-width: 767px){
@@ -468,126 +582,13 @@ Home Page Hero
 
 }
 
-    /*
-   ===============
-   Jewelry
-   ===============
-   */
-.jewelry-container{
-    display: grid;
-    gap:2rem 1rem;
-
-}
-.tags-container{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 3rem;
-}
-
-.jewelry-tags{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0.5rem 0.5rem;
-    padding-bottom: 3rem;
-    font-size: 1.2rem;
-}
-
-.jewelry-tags a{
-    text-transform: capitalize;
-    display: block;
-    color: #222222;
-    transition: var(--transition);
-}
-.jewelry-tags  a:hover{
-    color: #64748b;
-}
-
-.jewelry-items{
-display:  grid;
-    gap: 2rem  1rem;
-    padding-bottom: 3rem;
-
-}
-
-.jewelry-item{
-    display: block;
-}
-.item-img{
-   height: 15rem;
-    border-radius:  var(--borderRadius);
-    margin-bottom: 1rem;
-}
-
-.jewelry-item h5{
-    margin-bottom: 0;
-    line-height: 1;
-    color: #222222;
-}
-.jewelry-item p{
-    margin-bottom: 0;
-    line-height: 1;
-    margin-top: 0.5rem;
-    color: #222222;
-    letter-spacing: var(--letterSpacing);
-
-}
-
 @media screen and (min-width: 576px) {
-    .jewelry-items{
-        grid-template-columns: 1fr 1fr;
-    }
+    /*.jewelry-items{*/
+    /*    grid-template-columns: 1fr 1fr;*/
+    /*}*/
 
     .item-img{
         height: 10rem;
     }
 
-}
-    @media screen and (min-width: 992px) {
-        .jewelry-items{
-            grid-template-columns: 200px 1fr;
-        }
-
-        .tags-container{
-            order: 0;
-        }
-
-        .jewelry-tags{
-            grid-template-columns:1fr;
-        }
-
-        .tags-container p{
-            font-size: 0.85rem;
-        }
-
-    }
-
-    @media screen and (min-width: 1200px) {
-        .jewelry-tags{
-            grid-template-columns: 1fr 1fr 1fr ;
-        }
-
-        .tags-container h5{
-            font-size: 1.15rem;
-        }
-
-    }
-
-    /*
-===============
-error page
-===============
-*/
-.error-page{
-    text-align: center;
-    padding-top: 5rem;
-
-}
-.error-page h1{
-font-size: 9rem;
-}
-    /*
-===============
-
-===============
-*/
 }
